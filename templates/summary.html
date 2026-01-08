@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Expense Summary</h1>
+
+<!-- Total Expenses -->
+<div class="summary-card">
+    <h3>Total Expenses</h3>
+    <p>₹ {{ total }}</p>
+</div>
+
+<!-- Summary by Category -->
+<h2>Summary by Category</h2>
+<div class="summary-cards">
+    {% for cat, total in category_summary %}
+    <div class="summary-card">
+        <strong>{{ cat }}</strong>
+        <p>₹ {{ total }}</p>
+    </div>
+    {% endfor %}
+</div>
+
+<!-- Summary by Month -->
+<h2>Summary by Month</h2>
+<div class="summary-cards">
+    {% for month, total in monthly_summary %}
+    <div class="summary-card">
+        <strong>{{ month }}</strong>
+        <p>₹ {{ total }}</p>
+    </div>
+    {% endfor %}
+</div>
+
+<!-- Summary by Payment Mode -->
+<h2>Summary by Payment Mode</h2>
+<div class="summary-cards">
+    {% for mode, count in payment_summary %}
+    <div class="summary-card">
+        <strong>{{ mode }}</strong>
+        <p>{{ count }} times</p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

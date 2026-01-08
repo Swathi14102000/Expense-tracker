@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="form-container">
+    <h2>Add New Expense</h2>
+    <form method="POST" action="{{ url_for('add_expense') }}">
+        <div class="form-group">
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required>
+        </div>
+
+        <div class="form-group">
+            <label for="category">Category:</label>
+            <input type="text" id="category" name="category" placeholder="e.g., Food, Travel" required>
+        </div>
+
+        <div class="form-group">
+            <label for="amount">Amount:</label>
+            <input type="number" step="0.01" id="amount" name="amount" placeholder="0.00" required>
+        </div>
+
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" rows="2" placeholder="Optional details"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="payment_mode">Payment Mode:</label>
+            <input type="text" id="payment_mode" name="payment_mode" placeholder="Cash, Card, UPI">
+        </div>
+
+        <div class="form-group">
+            <label for="merchant_name">Merchant Name:</label>
+            <input type="text" id="merchant_name" name="merchant_name" placeholder="Store or vendor name">
+        </div>
+
+        <div class="form-group">
+            <label for="notes">Notes:</label>
+            <textarea id="notes" name="notes" rows="2" placeholder="Optional notes"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" placeholder="City or place">
+        </div>
+
+        <div class="form-group">
+            <label for="created_by">Created By:</label>
+            <input type="text" id="created_by" name="created_by" placeholder="Admin name" required>
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Add Expense" class="btn">
+        </div>
+    </form>
+</div>
+{% endblock %}

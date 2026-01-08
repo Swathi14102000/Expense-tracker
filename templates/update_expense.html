@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Update Expense</h2>
+<form method="post">
+    Category: <input name="category" value="{{ expense.category }}" required><br>
+    Amount: <input name="amount" type="number" step="0.01" value="{{ expense.amount }}" required><br>
+    Description: <textarea name="description">{{ expense.description }}</textarea><br>
+    Payment Mode: <input name="payment_mode" value="{{ expense.payment_mode }}"><br>
+    Merchant: <input name="merchant_name" value="{{ expense.merchant_name }}"><br>
+    Location: <input name="location" value="{{ expense.location }}"><br>
+    Notes: <textarea name="notes">{{ expense.notes }}</textarea><br>
+    Created By: <input name="created_by" value="{{ expense.created_by }}"><br>
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}
