@@ -31,5 +31,3 @@ A simple **Expense Tracker web application** built using **Flask** that allows a
 
 ---
 
-## 📂 Project Structure
-
